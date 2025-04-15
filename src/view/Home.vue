@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { createOAuth2Platform } from '../utils/auth';
-
-
-
-
 </script>
 
 <template>

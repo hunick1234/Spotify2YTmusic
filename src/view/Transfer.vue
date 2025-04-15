@@ -15,7 +15,7 @@
                 <SourceAlbums />
                 <TargetAlbums />
             </div>
-
+            <div @click="authenticate('Spotify')">login spotify</div>
         </div>
     </div>
 </template>
