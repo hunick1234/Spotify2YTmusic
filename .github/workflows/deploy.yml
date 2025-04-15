@@ -18,7 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
+        
+      - name: Inject Env Variables
+        run: |
+          echo "VITE_SPOTIFY_CLIENT_ID=${{ secrets.VITE_SPOTIFY_CLIENT_ID }}" >> .env.production
+          echo "VITE_YOUTUBE_MUSIC_CLIENT_ID=${{ secrets.VITE_YOUTUBE_MUSIC_CLIENT_ID }}" >> .env.production
+          echo "VITE_REDIRECT_URI=${{ secrets.VITE_DEPLOY_REDIRECT_URI }}" >> .env.production
+  
       - name: Install dependencies
         run: npm install
 
