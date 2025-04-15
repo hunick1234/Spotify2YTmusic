@@ -11,7 +11,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/Spotify2YTmusic/"),
   routes,
 });
 
