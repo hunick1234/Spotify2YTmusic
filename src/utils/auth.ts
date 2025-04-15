@@ -1,7 +1,9 @@
 const SPOTIFY_CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const YOUTUBE_MUSIC_CLIENT_ID = import.meta.env.VITE_YOUTUBE_MUSIC_CLIENT_ID;
 const REDIRECT_URI =
-  import.meta.env.VITE_REDIRECT_URI || "http://localhost:5173/callback";
+import.meta.env.MODE === "development"
+  ? import.meta.env.VITE_REDIRECT_URI
+  : import.meta.env.VITE_DEPLOY_REDIRECT_URI;
 
 const generateRandomString = (length: number) => {
   const possible =
