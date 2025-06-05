@@ -23,8 +23,10 @@ export class SpotifySourcePlatform implements SourcePlatform {
         Authorization: `Bearer ${this.accessToken}`,
       },
     });
-    if (!response.ok) alert("Spotify API error: " + response.statusText);
-    throw new Error(`Spotify API error: ${response.statusText}`);
+    if (!response.ok) {
+      alert("Spotify API error: " + response.statusText);
+      throw new Error(`Spotify API error: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -238,7 +240,6 @@ export class SpotifyTargetPlatform implements TargetPlatform {
       throw new Error(`Failed to follow artist: ${response.statusText}`);
     }
     return artist.id;
-    return "artist_id";
   }
 
   async findSong(song: Song): Promise<Song | null> {
